@@ -1,0 +1,19 @@
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 2rem;
+}
+.textContainer {
+  height: auto;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+.textHook {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+}

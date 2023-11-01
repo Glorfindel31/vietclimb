@@ -3,25 +3,63 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-background: 255, 255, 255;
+  --color-text: 0, 0, 0;
+  --color-accent-one: 255, 165, 0;
+  --color-accent-two: 51, 51, 51;
+  --border-radius: 0.2rem;
+  --border-style: 1px solid rgb(var(--color-accent-one));
+  --shadow-box: 0px 0px 3px rgba(var(--color-text), 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-background: 0, 0, 0;
+    --color-text: 255, 255, 255;
+    --color-accent-one: 255, 165, 0;
+    --color-accent-two: 51, 51, 51;
+    --border-radius: 0.2rem;
+    --border-style: 1px solid rgb(var(--color-accent-one));
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text));
+  font-family: var(--font-body);
+  font-weight: 200;
+  line-height: 1rem;
+}
+p {
+  margin-top: 1rem;
+}
+
+/* Accent One */
+.accent-one {
+  color: rgb(var(--color-accent-one));
+}
+
+/* Accent Two */
+.accent-two {
+  color: rgb(var(--color-accent-two));
+}
+
+/* Borders */
+.border {
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 2.5rem;
+}
+.subtitle {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
 }
