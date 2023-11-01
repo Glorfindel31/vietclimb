@@ -6,14 +6,21 @@
 }
 .textContainer {
   height: auto;
-  width: 60%;
+  width: 70%;
   display: flex;
   align-items: center;
-  padding: 3rem 0;
+  padding: 10rem 0;
 }
 .textHook {
   font-family: var(--font-title);
   font-weight: 900;
   font-size: 4.5rem;
   line-height: 4.5rem;
+}
+/* div block black span on two text lines */
+.block {
+  background-color: rgb(var(--color-text));
+  margin-right: 1rem;
+  height: 100%;
+  width: 5rem;
 }

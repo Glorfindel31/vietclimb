@@ -6,11 +6,12 @@ import SectionFirstTime from '@components/sectionFirstTime';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Header />
       <PageHead />
+      <section className="h-screen w-screen bg-slate-600"></section>
       <SectionFirstTime />
-    </div>
+    </>
   );
 };
 export default Home;
