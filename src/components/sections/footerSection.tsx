@@ -1,4 +1,8 @@
-export default function Footer() {
+type FooterProps = {
+  setShowContactForm: (show: boolean) => void;
+};
+
+export default function Footer({setShowContactForm}: FooterProps) {
   return (
     <footer
       className="w-screen flex flex-col justify-center items-center p-40 gap-8 m-0"
@@ -30,7 +34,9 @@ export default function Footer() {
           </div>
           <div className="flex-1 flex flex-col items-center">
             <div className="border-t border-gray-200 w-full mb-4"></div>
-            <button className="btn btn-white">CONTACT US</button>
+            <button onClick={() => setShowContactForm(true)} className="btn btn-white">
+              CONTACT US
+            </button>
           </div>
         </div>
         <p>vietclimb all right reserved, copyright &copy; 2023</p>

@@ -121,6 +121,8 @@ html {
   font-weight: 900;
   width: 15rem;
   height: 2.5rem;
+  line-height: 2.5rem;
+  box-sizing: border-box;
 }
 
 .btn-black {
@@ -153,6 +155,10 @@ html {
   color: rgb(var(--color-text));
 }
 
+.btn-icon {
+  font-size: 2rem;
+  text-align: center;
+}
 .separator::after {
   content: '';
   display: block;

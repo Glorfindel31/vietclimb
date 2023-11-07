@@ -67,6 +67,7 @@
   flex-direction: column;
   width: 10rem;
   background-color: rgba(var(--color-text), 0.7);
+  backdrop-filter: blur(0.5rem);
   color: rgb(var(--color-background));
   text-transform: uppercase;
   gap: 0.5rem;

@@ -2,11 +2,8 @@ import Image from 'next/image';
 import AboutImg from '@public/_DSC0043.png';
 
 export default function GymSection() {
-
   return (
-    <section
-      className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto"
-    >
+    <section className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto">
       <div className="flex h-full py-20">
         <div className="flex flex-1 items-center">
           <div className="flex flex-col justify-evenly px-8 h-full overflow-scroll">
@@ -30,8 +27,7 @@ export default function GymSection() {
             className="grayscale"
             src={AboutImg}
             alt="Picture of the author"
-            layout="fill"
-            objectFit="cover"
+            style={{objectFit: 'cover', objectPosition: 'center'}}
           />
         </div>
       </div>

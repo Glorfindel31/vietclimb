@@ -30,8 +30,7 @@ export default function HeroSection() {
           className="object-cover grayscale"
           src={HeroImg}
           alt="Picture of the author"
-          layout="fill"
-          objectFit="cover"
+          style={{objectFit: 'cover', objectPosition: 'center'}}
         />
       </div>
     </section>

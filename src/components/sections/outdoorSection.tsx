@@ -10,8 +10,7 @@ export default function outdoorSection() {
             className="grayscale"
             src={AboutImg}
             alt="Picture of the author"
-            layout="fill"
-            objectFit="cover"
+            style={{objectFit: 'cover', objectPosition: 'center'}}
           />
         </div>
         <div className="flex flex-1 items-center">
