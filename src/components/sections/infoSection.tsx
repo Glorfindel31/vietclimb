@@ -1,6 +1,9 @@
 export default function InfoSection() {
   return (
-    <section className="w-screen h-screen">
+    <section
+      id="infoSection"
+      className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto"
+    >
       <div className="flex flex-row p-8 h-full">
         <div className="overflow-hidden flex-1">
           <iframe

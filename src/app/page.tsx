@@ -6,11 +6,13 @@ import GymSection from '@/components/sections/gymSection';
 import OutdoorSection from '@/components/sections/outdoorSection';
 import InfoSection from '@/components/sections/infoSection';
 import Footer from '@/components/sections/footerSection';
+import Header from '@/components/ui/header';
 
 const Home: NextPage = () => {
   return (
     <>
       <HeroSection />
+      <Header />
       <AboutSection />
       <GymSection />
       <OutdoorSection />

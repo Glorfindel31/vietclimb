@@ -3,7 +3,7 @@ import AboutImg from '@public/_DSC0043.png';
 
 export default function outdoorSection() {
   return (
-    <section className="w-screen h-screen flex flex-col justify-between">
+    <section className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto">
       <div className="flex h-full py-20">
         <div className="relative flex flex-[2] overflow-hidden items-center">
           <Image
