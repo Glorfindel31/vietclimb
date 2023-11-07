@@ -1,0 +1,118 @@
+.headerBar {
+  background-color: rgb(var(--color-background));
+  height: 2.5rem;
+  box-shadow: 0 5px 8px -2px rgba(var(--color-text), 0.2);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 2.5rem;
+  padding: 0 2rem;
+}
+.logoContainer {
+  z-index: 10;
+  position: relative;
+  aspect-ratio: 1/1;
+  height: 2.5rem;
+  background-color: rgb(var(--color-background));
+}
+.logoTextContainer {
+  inset: 0;
+  z-index: 0;
+  position: absolute;
+  height: 2.5rem;
+  aspect-ratio: 2000/501;
+  transform: translateX(-110%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.logoVisible {
+  transform: translateX(2.2rem);
+  overflow: hidden;
+  opacity: 1;
+}
+.nav {
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  overflow: visible;
+}
+.navItems {
+  font-family: var(--font-title);
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative; /* add this line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem; /* adjust this to match the height of your navbar */
+}
+
+.navItems:not(.dropdownItem)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.5rem;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navItems:not(.dropdownItem):hover::after {
+  opacity: 1;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  background-color: rgba(var(--color-text), 0.7);
+  color: rgb(var(--color-background));
+  text-transform: uppercase;
+  gap: 0.5rem;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0.3rem);
+}
+
+.dropdownItem {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  padding-top: 1rem;
+}
+.dropdown li:last-child {
+  padding-bottom: 1rem;
+}
+.dropdownItem::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.dropdownItem:hover::after {
+  opacity: 1;
+}
