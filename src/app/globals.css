@@ -29,10 +29,16 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.65rem;
-  scroll-behavior: smooth;
 }
 html {
   font-size: 14px;
+}
+
+p {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65rem;
 }
 /* Accent One */
 .accent-one {
@@ -155,10 +161,20 @@ html {
   color: rgb(var(--color-text));
 }
 
+.btn-ghost {
+  background-color: transparent;
+  color: rgb(var(--color-text));
+  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+.btn-ghost:hover {
+  text-shadow: 0px 1px 3px rgb(var(--color-text));
+  color: rgb(var(--color-accent-one));
+}
 .btn-icon {
   font-size: 2rem;
   text-align: center;
 }
+
 .separator::after {
   content: '';
   display: block;
