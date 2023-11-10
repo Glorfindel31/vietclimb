@@ -1,12 +1,15 @@
+'use client';
 import Image from 'next/image';
-
+import {useContactForm} from '@/utils/contactFormContext';
 import AboutImg from '@public/_DSC0043.png';
 
-type AboutSectionProps = {
-  setShowContactForm: (show: boolean) => void;
-};
+export default function AboutSection() {
+  const {setShowContactForm} = useContactForm();
 
-export default function AboutSection({setShowContactForm}: AboutSectionProps) {
+  if (!setShowContactForm) {
+    throw new Error('setShowContactForm is undefined');
+  }
+
   return (
     <section className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto py-8">
       <div className="relative flex flex-[2] overflow-hidden items-center">

@@ -1,8 +1,11 @@
-type FooterProps = {
-  setShowContactForm: (show: boolean) => void;
-};
+'use client';
+import {useContactForm} from '@/utils/contactFormContext';
 
-export default function Footer({setShowContactForm}: FooterProps) {
+export default function Footer() {
+  const {setShowContactForm} = useContactForm();
+  if (!setShowContactForm) {
+    throw new Error('setShowContactForm is undefined');
+  }
   return (
     <footer
       className="w-screen flex flex-col justify-center items-center p-40 gap-8 m-0"

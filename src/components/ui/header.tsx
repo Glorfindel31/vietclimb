@@ -3,49 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '@public/VC-logo-Big.png';
 import style from './header.module.css';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, use} from 'react';
 import {IoIosArrowDown} from 'react-icons/io';
-
-interface MenuItem {
-  title: string;
-  dropdown?: boolean;
-  options?: {
-    title: string;
-    onClick?: () => void;
-  }[];
-}
-
-const menuItems: MenuItem[] = [
-  {
-    title: 'Info',
-    dropdown: true,
-    options: [
-      {title: 'First time?', onClick: () => console.log('First time?')},
-      {title: 'Price List', onClick: () => console.log('Price List')},
-      {title: 'Location', onClick: () => console.log('Location')},
-      {title: 'History', onClick: () => console.log('History')},
-    ],
-  },
-  {
-    title: 'Service',
-    dropdown: true,
-    options: [
-      {title: 'Gym', onClick: () => console.log('Gym')},
-      {title: 'Coaching', onClick: () => console.log('Coaching')},
-      {title: 'Outdoor', onClick: () => console.log('Outdoor')},
-      {title: 'Homestay', onClick: () => console.log('Homestay')},
-      {title: 'Construction', onClick: () => console.log('Construction')},
-    ],
-  },
-  {title: 'Blog'},
-  {title: 'Contact'},
-  {title: 'EN'},
-  {title: 'VN'},
-];
+import {useContactForm} from '@/utils/contactFormContext';
+import useMenuItems from '@public/menuItems';
 
 const Header = () => {
+  const menuItems = useMenuItems();
+  const {setShowContactForm} = useContactForm();
   const [dropdown1, setDropdown1] = useState(false);
   const [dropdown2, setDropdown2] = useState(false);
+
+  if (!setShowContactForm) {
+    throw new Error('setShowContactForm is undefined');
+  }
 
   const handleMouseEnter1 = () => {
     setDropdown1(true);
@@ -108,7 +79,7 @@ const Header = () => {
                   : undefined
               }
             >
-              <button className={style.navItems}>
+              <button className={style.navItems} onClick={item.onClick!}>
                 {item.title}
                 {item.dropdown && <IoIosArrowDown className="inline" />}
               </button>

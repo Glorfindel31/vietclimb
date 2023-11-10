@@ -1,21 +1,32 @@
 'use client';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import {useContactForm} from '@/utils/contactFormContext';
 import style from './contactFormModal.module.css';
 import {AiOutlineArrowLeft, AiOutlineFacebook, AiOutlineInstagram} from 'react-icons/ai';
 import {HiOutlineMail} from 'react-icons/hi';
 import Link from 'next/link';
 
-type ContactFormModalProps = {
-  onClose: () => void;
-};
+const ContactFormModal = () => {
+  const {showContactForm, setShowContactForm} = useContactForm();
 
-const ContactFormModal: React.FC<ContactFormModalProps> = ({onClose}) => {
-  return (
+  useEffect(() => {
+    if (showContactForm) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showContactForm]);
+
+  const closeContactFormHandler = () => {
+    setShowContactForm?.(false);
+  };
+
+  return showContactForm ? (
     <>
       <div className={style.backdrop}></div>
       <div className={style.container}>
         <div className={style.header}>
-          <button onClick={onClose} className="btn-icon">
+          <button onClick={closeContactFormHandler} className="btn-icon">
             <AiOutlineArrowLeft />
           </button>
           <h2 className="title-verysmall p-4">You have a Question?</h2>
@@ -29,7 +40,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({onClose}) => {
           <input type="text" name="object" id="object" placeholder="object" />
           <label htmlFor="message">What would you want to ask?</label>
           <textarea name="message" id="message" placeholder="message"></textarea>
-          <button onClick={onClose} className="btn btn-black">
+          <button onClick={closeContactFormHandler} className="btn btn-black">
             SEND
           </button>
         </form>
@@ -55,7 +66,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({onClose}) => {
         <div className={style.empty}></div>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default ContactFormModal;
