@@ -1,111 +1,168 @@
-interface Item {
-  gymServices: {
-    membership: {
-      'premium member': {
-        additional: string;
-        '1 month': string;
-        '3 months': string;
-        '6 months': string;
-        '12 months': string;
-      };
-      member: {
-        '1 month': string;
-        '3 months': string;
-        '6 months': string;
-        '12 months': string;
-      };
-      'kids member': {
-        additional: string;
-        '1 month': string;
-        '3 months': string;
-        '6 months': string;
-        '12 months': string;
-      };
-    };
-    daypass: {
-      'day pass': string;
-      '10 punch pass': string;
-      'kids day pass': string;
-      '10 kids punch pass': string;
-    };
-    classes: {
-      additional: string;
-      introduction: {
-        '30 min': string;
-      };
-      privat: {
-        '1 hour': string;
-      };
-      group: {
-        additional: string;
-        'step in adults': string;
-        'step in kids': string;
-        '4 classes adults': string;
-        '8 classes adults': string;
-        '4 classes kids': string;
-        '8 classes kids': string;
-      };
-    };
-    rental: {
-      shoes: string;
-      'chalk bag': string;
-    };
-  };
+interface Option {
+  name: string;
+  additional?: string;
+  price: string;
 }
 
-export const PriceListItems: Item[] = [
+interface Service {
+  additional?: string;
+  name: string;
+  options: Option[];
+}
+
+export const PriceListItems: Service[] = [
   {
-    gymServices: {
-      membership: {
-        'premium member': {
-          additional: 'Unlimited group classes',
-          '1 month': '1,600,000',
-          '3 months': '4,000,000',
-          '6 months': '6,600,000',
-          '12 months': '11,500,000',
-        },
-        member: {
-          '1 month': '1,400,000',
-          '3 months': '3,400,000',
-          '6 months': '5,700,000',
-          '12 months': '9,800,000',
-        },
-        'kids member': {
-          additional: 'under 14 years old',
-          '1 month': '1,200,000',
-          '3 months': '2,800,000',
-          '6 months': '4,800,000',
-          '12 months': '8,500,000',
-        },
+    name: 'premium member',
+    additional: 'Unlimited group classes',
+    options: [
+      {
+        name: '1 month',
+        price: '1,600,000',
       },
-      daypass: {
-        'day pass': '180,000',
-        '10 punch pass': '1,600,000',
-        'kids day pass': '150,000',
-        '10 kids punch pass': '1,300,000',
+      {
+        name: '3 months',
+        price: '4,000,000',
       },
-      classes: {
-        additional: 'class price includes day pass',
-        introduction: {
-          '30 min': '350,000',
-        },
-        privat: {
-          '1 hour': '500,000',
-        },
-        group: {
-          additional: 'adult class 2h, kids class 1h',
-          'step in adults': '350,000',
-          'step in kids': '250,000',
-          '4 classes adults': '1,200,000',
-          '8 classes adults': '2,200,000',
-          '4 classes kids': '900,000',
-          '8 classes kids': '1,500,000',
-        },
+      {
+        name: '6 months',
+        price: '6,600,000',
       },
-      rental: {
-        shoes: '50,000',
-        'chalk bag': '20,000',
+      {
+        name: '12 months',
+        price: '11,500,000',
       },
-    },
+    ],
+  },
+  {
+    name: 'member',
+    options: [
+      {
+        name: '1 month',
+        price: '1,400,000',
+      },
+      {
+        name: '3 months',
+        price: '3,400,000',
+      },
+      {
+        name: '6 months',
+        price: '5,700,000',
+      },
+      {
+        name: '12 months',
+        price: '9,800,000',
+      },
+    ],
+  },
+  {
+    name: 'kids member',
+    options: [
+      {
+        name: '1 month',
+        price: '1,200,000',
+      },
+      {
+        name: '3 months',
+        price: '2,800,000',
+      },
+      {
+        name: '6 months',
+        price: '4,800,000',
+      },
+      {
+        name: '12 months',
+        price: '8,500,000',
+      },
+    ],
+  },
+  {
+    name: 'class',
+    options: [
+      {
+        name: '1 0n 1 class',
+        additional: '1 hour',
+        price: '500,000',
+      },
+      {
+        name: 'introduction class',
+        additional: '30 minutes',
+        price: '350,000',
+      },
+    ],
+  },
+  {
+    name: 'group class (adult)',
+    additional: '2 hours, Tuesday, Wednesday, Friday',
+    options: [
+      {
+        name: '1 class',
+        price: '350,000',
+      },
+      {
+        name: '4 classes',
+        price: '1,200,000',
+      },
+      {
+        name: '8 classes',
+        price: '2,200,000',
+      },
+    ],
+  },
+  {
+    name: 'group class (kid Under 14)',
+    additional: '1h Tuesday',
+    options: [
+      {
+        name: '1 class',
+        price: '250,000',
+      },
+      {
+        name: '4 classes',
+        price: '900,000',
+      },
+      {
+        name: '8 classes',
+        price: '1,500,000',
+      },
+    ],
+  },
+  {
+    name: 'day pass',
+    options: [
+      {
+        name: '1 day pass',
+        price: '180,000',
+      },
+      {
+        name: '10 day pass',
+        price: '1,600,000',
+      },
+    ],
+  },
+  {
+    name: 'kid pass',
+    options: [
+      {
+        name: '1 day pass',
+        price: '120,000',
+      },
+      {
+        name: '10 day pass',
+        price: '1,080,000',
+      },
+    ],
+  },
+  {
+    name: 'rental',
+    options: [
+      {
+        name: 'shoes',
+        price: '30,000',
+      },
+      {
+        name: 'chalk bag',
+        price: '30,000',
+      },
+    ],
   },
 ];

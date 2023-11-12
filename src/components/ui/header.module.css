@@ -109,3 +109,24 @@
 .dropdownItem:hover::after {
   opacity: 1;
 }
+
+/* navbar animation */
+@keyframes slideDown {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 0;
+  }
+}
+.navFixed {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 200;
+  background-color: rgb(var(--color-background), 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 3px 6px rgba(var(--color-text), 0.16);
+  animation: slideDown 0.3s ease-out forwards;
+}

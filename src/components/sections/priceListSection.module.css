@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.service-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service {
+  background-color: rgb(var(--color-accent-one));
+  color: rgb(var(--color-background));
+  padding: 1rem;
+}
+.prices-container {
+  border-radius: var(--border-radius);
+}
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,12 +1,19 @@
+import {NextPage} from 'next';
 import Footer from '@/components/sections/footerSection';
 import Header from '@/components/ui/header';
-import {NextPage} from 'next';
+import PriceListSection from '@/components/sections/priceListSection';
+import ContactFormModal from '@/components/ui/contactFormModal';
+import {ContactFormProvider} from '@/utils/contactFormContext';
 
 const PriceListPage: NextPage = () => {
   return (
     <>
-      <Header />
-      <Footer />
+      <ContactFormProvider>
+        <Header />
+        <PriceListSection />
+        <Footer />
+        <ContactFormModal />
+      </ContactFormProvider>
     </>
   );
 };

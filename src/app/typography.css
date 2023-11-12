@@ -1,0 +1,66 @@
+/* fonts and sizes */
+.title-verysmall {
+  font-family: var(--font-title);
+  font-size: 1.618rem;
+  font-weight: 900;
+  line-height: 1.5rem;
+}
+.title-small {
+  font-family: var(--font-title);
+  font-size: 2.618rem;
+  font-weight: 900;
+  line-height: 2rem;
+}
+.title-normal {
+  font-family: var(--font-title);
+  font-size: 4.236rem;
+  font-weight: 900;
+  line-height: 4rem;
+}
+.title-big {
+  font-family: var(--font-title);
+  font-size: 6.854rem;
+  font-weight: 900;
+  line-height: 6rem;
+}
+.title-verybig {
+  font-family: var(--font-title);
+  font-size: 11.089rem;
+  font-weight: 900;
+  line-height: 11rem;
+}
+.subtitle-verysmall {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.subtitle-small {
+  font-family: var(--font-title);
+  font-size: 1.618rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.subtitle-normal {
+  font-family: var(--font-title);
+  font-size: 2.618rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.subtitle-big {
+  font-family: var(--font-title);
+  font-size: 4.236rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.subtitle-verybig {
+  font-family: var(--font-title);
+  font-size: 6.854rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}

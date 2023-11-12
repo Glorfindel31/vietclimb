@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto">
         <div className="flex flex-row w-full gap-4">
           <div className="flex-1">
-            <div className="border-t border-gray-200 w-full mb-4"></div>
+            <div className="separator-background"></div>
             <div className="flex flex-row gap-[40%]">
               <ul>
                 <li>Sorem</li>
@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex-1 flex flex-col items-center">
-            <div className="border-t border-gray-200 w-full mb-4"></div>
+            <div className="separator-background w-full"></div>
             <button onClick={() => setShowContactForm(true)} className="btn btn-white">
               CONTACT US
             </button>

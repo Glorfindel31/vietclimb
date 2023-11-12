@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '@public/VC-logo-Big.png';
 import style from './header.module.css';
-import {useState, useEffect, use} from 'react';
+import {useState, useEffect} from 'react';
 import {IoIosArrowDown} from 'react-icons/io';
 import {useContactForm} from '@/utils/contactFormContext';
 import useMenuItems from '@public/menuItems';
@@ -36,9 +36,9 @@ const Header = () => {
       let headerElement = document.getElementById('header');
       if (headerElement) {
         if (window.scrollY > window.innerHeight * 0.9) {
-          headerElement.classList.add('fixed');
+          headerElement.classList.add(style.navFixed);
         } else {
-          headerElement.classList.remove('fixed');
+          headerElement.classList.remove(style.navFixed);
         }
       }
     };
