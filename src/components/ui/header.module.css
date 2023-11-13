@@ -75,14 +75,13 @@
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  padding: 1rem;
 }
-
 .hidden {
   visibility: hidden;
   opacity: 0;
   transform: translateY(0.3rem);
 }
-
 .dropdownItem {
   font-family: var(--font-title);
   font-size: 0.9rem;
@@ -90,10 +89,6 @@
   text-transform: uppercase;
   position: relative;
   width: 100%;
-  padding-top: 1rem;
-}
-.dropdown li:last-child {
-  padding-bottom: 1rem;
 }
 .dropdownItem::after {
   content: '';
@@ -102,6 +97,7 @@
   right: 0;
   bottom: -0.2rem;
   height: 1px;
+  width: 100%;
   background: currentColor;
   opacity: 0;
   transition: opacity 0.3s ease;

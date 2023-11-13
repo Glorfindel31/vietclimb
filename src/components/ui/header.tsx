@@ -79,10 +79,14 @@ const Header = () => {
                   : undefined
               }
             >
-              <button className={style.navItems} onClick={item.onClick!}>
+              <Link
+                href={item.href || '#'}
+                className={style.navItems}
+                onClick={item.onClick!}
+              >
                 {item.title}
                 {item.dropdown && <IoIosArrowDown className="inline" />}
-              </button>
+              </Link>
               {item.dropdown && (
                 <ul
                   className={`${style.dropdown} ${
@@ -99,9 +103,13 @@ const Header = () => {
                 >
                   {item.options?.map((option, index) => (
                     <li key={index}>
-                      <button className={style.dropdownItem} onClick={option.onClick!}>
+                      <Link
+                        href={option.href || '#'}
+                        className={style.dropdownItem}
+                        onClick={option.onClick!}
+                      >
                         {option.title}
-                      </button>
+                      </Link>
                     </li>
                   ))}
                 </ul>

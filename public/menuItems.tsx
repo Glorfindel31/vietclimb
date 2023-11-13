@@ -2,10 +2,12 @@ import {useContactForm} from '@/utils/contactFormContext'; // Import the hook
 
 interface MenuItem {
   title: string;
+  href?: string;
   onClick?: () => void;
   dropdown?: boolean;
   options?: {
     title: string;
+    href?: string;
     onClick?: () => void;
   }[];
 }
@@ -21,26 +23,26 @@ export default function useMenuItems(): MenuItem[] {
       title: 'Info',
       dropdown: true,
       options: [
-        {title: 'First time?', onClick: () => console.log('First time?')},
-        {title: 'Price List', onClick: () => console.log('Price List')},
-        {title: 'Location', onClick: () => console.log('Location')},
-        {title: 'History', onClick: () => console.log('History')},
+        {title: 'First time?', href: '/first-time'},
+        {title: 'Price List', href: '/pricelist'},
+        {title: 'Location', href: '/location'},
+        {title: 'History', href: '/history'},
       ],
     },
     {
       title: 'Service',
       dropdown: true,
       options: [
-        {title: 'Gym', onClick: () => console.log('Gym')},
-        {title: 'Coaching', onClick: () => console.log('Coaching')},
-        {title: 'Outdoor', onClick: () => console.log('Outdoor')},
-        {title: 'Homestay', onClick: () => console.log('Homestay')},
-        {title: 'Construction', onClick: () => console.log('Construction')},
+        {title: 'Gym', href: '/gym'},
+        {title: 'Coaching', href: '/coaching'},
+        {title: 'Outdoor', href: '/outdoor'},
+        {title: 'Homestay', href: '/homestay'},
+        {title: 'Construction', href: '/construction'},
       ],
     },
-    {title: 'Blog'},
+    {title: 'Blog', href: '/blog'},
     {title: 'Contact', onClick: () => setShowContactForm(true)},
-    {title: 'EN'},
-    {title: 'VN'},
+    {title: 'EN', href: '/en'},
+    {title: 'VN', href: '/vn'},
   ];
 }
