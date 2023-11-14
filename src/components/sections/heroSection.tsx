@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import HeroImg from '@public/_DSC0065.png';
+const HeroImg: string =
+  'https://res.cloudinary.com/dfzrhlnwe/image/upload/f_auto,q_auto/v1/gym/_DSC0092_1_jvrvu8';
 
 export default function HeroSection() {
   const scrollIntoViewHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -27,9 +28,10 @@ export default function HeroSection() {
       </div>
       <div className="relative flex flex-1 justify-center items-center overflow-hidden">
         <Image
-          className="object-cover grayscale"
+          className="object-cover grayscale contrast-[110%]"
           src={HeroImg}
           alt="Picture of the author"
+          fill
           style={{objectFit: 'cover', objectPosition: 'center'}}
         />
       </div>

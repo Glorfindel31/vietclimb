@@ -14,9 +14,10 @@ export default function AboutSection() {
     <section className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm h-screen flex flex-row m-auto py-8">
       <div className="relative flex flex-[2] overflow-hidden items-center">
         <Image
-          className="grayscale"
+          className="object-cover grayscale contrast-[110%]"
           src={AboutImg}
           alt="Picture of the author"
+          fill
           style={{objectFit: 'cover', objectPosition: 'center'}}
         />
       </div>
