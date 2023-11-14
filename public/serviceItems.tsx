@@ -6,7 +6,7 @@ interface Item {
   serviceTitle: string;
   title: string;
   description: string;
-  imageUrl: StaticImageData;
+  imageUrl: string | StaticImageData;
 }
 
 export const GymServiceItems: Item[] = [
@@ -15,7 +15,8 @@ export const GymServiceItems: Item[] = [
     title: 'Bouldering Wall',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam illum repellat, asperiores deserunt perspiciatis distinctio quisquam?',
-    imageUrl: AboutImg,
+    imageUrl:
+      'https://res.cloudinary.com/dfzrhlnwe/image/upload/f_auto,q_auto/v1/gym/zgpbwjfx9krh3xlplr3v',
   },
   {
     serviceTitle: 'Gym',

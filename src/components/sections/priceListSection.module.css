@@ -1,10 +1,12 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 .service-container {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   justify-content: space-between;
 }
 .service {
@@ -13,11 +15,14 @@
   padding: 1rem;
 }
 .prices-container {
-  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .price {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-transform: capitalize;
 }

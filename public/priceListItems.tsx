@@ -76,21 +76,6 @@ export const PriceListItems: Service[] = [
     ],
   },
   {
-    name: 'class',
-    options: [
-      {
-        name: '1 0n 1 class',
-        additional: '1 hour',
-        price: '500,000',
-      },
-      {
-        name: 'introduction class',
-        additional: '30 minutes',
-        price: '350,000',
-      },
-    ],
-  },
-  {
     name: 'group class (adult)',
     additional: '2 hours, Tuesday, Wednesday, Friday',
     options: [
@@ -123,6 +108,21 @@ export const PriceListItems: Service[] = [
       {
         name: '8 classes',
         price: '1,500,000',
+      },
+    ],
+  },
+  {
+    name: 'class',
+    options: [
+      {
+        name: '1 0n 1 class',
+        additional: '1 hour',
+        price: '500,000',
+      },
+      {
+        name: 'introduction class',
+        additional: '30 minutes',
+        price: '350,000',
       },
     ],
   },

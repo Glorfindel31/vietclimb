@@ -8,7 +8,7 @@ interface Item {
   serviceTitle: string;
   title: string;
   description: string;
-  imageUrl: StaticImageData;
+  imageUrl: string | StaticImageData;
 }
 interface CarouselServiceProps {
   items: Item[];
