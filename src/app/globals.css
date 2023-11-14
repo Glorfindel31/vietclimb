@@ -8,7 +8,7 @@
   --color-accent-one: 255, 165, 0;
   --color-accent-two: 51, 51, 51;
   --border-radius: 0.2rem;
-  --border-style: 1px solid rgb(var(--color-accent-one));
+  --border-style: 1px solid rgb(var(--color-text));
   --shadow-box: 0px 0px 3px rgba(var(--color-text), 0.2);
 }
 

@@ -2,11 +2,13 @@ interface Option {
   name: string;
   additional?: string;
   price: string;
+  description?: string;
 }
 
 interface Service {
   additional?: string;
   name: string;
+  description?: string;
   options: Option[];
 }
 
@@ -78,6 +80,8 @@ export const PriceListItems: Service[] = [
   {
     name: 'group class (adult)',
     additional: '2 hours, Tuesday, Wednesday, Friday',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
     options: [
       {
         name: '1 class',
@@ -96,6 +100,8 @@ export const PriceListItems: Service[] = [
   {
     name: 'group class (kid Under 14)',
     additional: '1h Tuesday',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
     options: [
       {
         name: '1 class',
@@ -118,11 +124,15 @@ export const PriceListItems: Service[] = [
         name: '1 0n 1 class',
         additional: '1 hour',
         price: '500,000',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
       },
       {
         name: 'introduction class',
         additional: '30 minutes',
         price: '350,000',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
       },
     ],
   },

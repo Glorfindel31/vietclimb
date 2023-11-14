@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+}
+.container:hover {
+  box-shadow: 0px 0px 10px rgba(var(--color-text), 0.8);
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
