@@ -4,7 +4,7 @@ import {useContactForm} from '@/utils/contactFormContext';
 
 type CardContentProps = {
   title: string;
-  details?: string;
+  additional?: string;
   price: string;
   description?: string;
   emphasized?: boolean;
@@ -34,15 +34,15 @@ const CardContent: React.FC<CardContentProps> = props => {
       </div>
       <div className={style.body}>
         <div className="flex flex-row justify-between">
-          <h3 className="subtitle-verysmall">*{props.details}</h3>{' '}
+          <h3 className="subtitle-verysmall">*{props.additional}</h3>{' '}
           <h3 className="subtitle-verysmall">{props.price} VND</h3>
         </div>
-        <p>{props.description}</p>
+        <p className="h-full">{props.description}</p>
         <button
           className={`btn ${props.emphasized ? 'btn-white' : 'btn-black'} self-end`}
           onClick={() => setShowContactForm(true)}
         >
-          CONTACT US
+          BOOK NOW
         </button>
       </div>
     </>

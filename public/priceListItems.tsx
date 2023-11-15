@@ -83,7 +83,7 @@ export const PriceListItems: Service[] = [
     additional: '2 hours, Tuesday, Wednesday, Friday',
     price: '350,000',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
+      'Lorem dolor sit amet, consectetur adipisicing elit. Ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
     options: [
       {
         name: '1 class',
@@ -104,7 +104,7 @@ export const PriceListItems: Service[] = [
     additional: '1h Tuesday',
     price: '250,000',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
+      'Lorem ipsum dolor sit amet. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
     options: [
       {
         name: '1 class',
@@ -128,14 +128,14 @@ export const PriceListItems: Service[] = [
         additional: '1 hour',
         price: '500,000',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
       },
       {
         name: 'introduction class',
         additional: '30 minutes',
         price: '350,000',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
+          'Repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
       },
     ],
   },

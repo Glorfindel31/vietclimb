@@ -7,29 +7,40 @@ import {FAQItem, faqItems} from '@public/faqItems';
 import {useContactForm} from '@/utils/contactFormContext';
 
 interface CardData {
-  index: number;
-  optionIndex?: number;
+  title: string;
+  additional: string;
+  price: string;
+  description: string;
   emphasized?: boolean;
 }
 
 const cardData = [
-  {index: 5, optionIndex: 1},
-  {index: 5, optionIndex: 0, emphasized: true},
-  {index: 3},
-  {index: 4},
+  {
+    title: PriceListItems[5].options[1].name,
+    additional: PriceListItems[5].options[1].additional,
+    price: PriceListItems[5].options[1].price,
+    description: PriceListItems[5].options[1].description,
+  },
+  {
+    title: PriceListItems[5].options[0].name,
+    additional: PriceListItems[5].options[0].additional,
+    price: PriceListItems[5].options[0].price,
+    description: PriceListItems[5].options[0].description,
+    emphasized: true,
+  },
+  {
+    title: PriceListItems[3].name,
+    additional: PriceListItems[3].additional,
+    price: PriceListItems[3].options[0].price,
+    description: PriceListItems[3].description,
+  },
+  {
+    title: PriceListItems[4].name,
+    additional: PriceListItems[4].additional,
+    price: PriceListItems[4].options[0].price,
+    description: PriceListItems[4].description,
+  },
 ];
-
-const getCardContentProps = (data: CardData) => {
-  const service = PriceListItems[data.index];
-  const option =
-    data.optionIndex !== undefined ? service.options[data.optionIndex] : null;
-  return {
-    title: option ? option.name : service.name,
-    details: option ? option.additional : service.additional,
-    price: option ? option.price : '',
-    description: option ? option.description : service.description,
-  };
-};
 
 export default function FirstTimeSection() {
   const {setShowContactForm} = useContactForm();
@@ -37,13 +48,14 @@ export default function FirstTimeSection() {
     throw new Error('setShowContactForm is undefined');
   }
   return (
-    <section className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm m-auto py-8">
+    <section className="xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-md sm:max-w-sm m-auto py-8 flex flex-col gap-8">
       <h1 className="title-big">First Time Climbing?</h1>
-      <div className="separator-text my-8"></div>
+      <div className="separator-text"></div>
+      <h2 className="title-small">We have everything you need to get started!</h2>
       <div className={style['cards-container']}>
         {cardData.map((data, i) => (
           <Card key={i} className={data.emphasized ? style.emphasized : undefined}>
-            <CardContent {...getCardContentProps(data)} emphasized={data.emphasized} />
+            <CardContent {...data} emphasized={data.emphasized} />
           </Card>
         ))}
         <Card>
@@ -53,10 +65,10 @@ export default function FirstTimeSection() {
             </h1>
             <div className="separator-text"></div>
           </div>
-          <div className={style.body}>
+          <ul className={style.body}>
             {faqItems.map((item: FAQItem, index: number) => (
               <li key={index}>
-                <h3 className="title-verysmall">{item.question}</h3>
+                <h3 className="title-verysmall">- {item.question}</h3>
                 <p className="pl-4 italic">{item.answer}</p>
               </li>
             ))}
@@ -66,7 +78,7 @@ export default function FirstTimeSection() {
             >
               CONTACT US
             </button>
-          </div>
+          </ul>
         </Card>
       </div>
     </section>
