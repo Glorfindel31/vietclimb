@@ -9,6 +9,7 @@ interface Service {
   additional?: string;
   name: string;
   description?: string;
+  price?: string;
   options: Option[];
 }
 
@@ -80,6 +81,7 @@ export const PriceListItems: Service[] = [
   {
     name: 'group class (adult)',
     additional: '2 hours, Tuesday, Wednesday, Friday',
+    price: '350,000',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
     options: [
@@ -100,6 +102,7 @@ export const PriceListItems: Service[] = [
   {
     name: 'group class (kid Under 14)',
     additional: '1h Tuesday',
+    price: '250,000',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero veniam pariatur est voluptatum tempora repudiandae quaerat ex sapiente, laudantium sint eum nostrum nulla quam neque perferendis. Delectus nihil voluptatum eligendi.',
     options: [

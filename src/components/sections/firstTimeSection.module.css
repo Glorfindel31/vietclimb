@@ -3,12 +3,36 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
+.cards-container > :last-child {
+  grid-column: span 2;
+}
 .body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  gap: 1.5rem;
+}
+.header {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-.header {
+
+.emphasized {
+  background-color: rgb(var(--color-text));
+  color: rgb(var(--color-background));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  outline: 1px solid rgb(var(--color-background));
+  border-radius: var(--border-radius);
+  padding: 2rem;
+}
+.empethized:hover {
+  box-shadow: 0px 0px 10px rgba(var(--color-text), 0.8);
+}
+.faq {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

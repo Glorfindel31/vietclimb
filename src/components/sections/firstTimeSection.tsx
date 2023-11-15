@@ -1,9 +1,35 @@
 'use client';
 import Card from '@/components/ui/card';
 import style from './firstTimeSection.module.css';
+import CardContent from '../others/cardContent';
 import {PriceListItems} from '@public/priceListItems';
+import {FAQItem, faqItems} from '@public/faqItems';
 import {useContactForm} from '@/utils/contactFormContext';
-import Image from 'next/image';
+
+interface CardData {
+  index: number;
+  optionIndex?: number;
+  emphasized?: boolean;
+}
+
+const cardData = [
+  {index: 5, optionIndex: 1},
+  {index: 5, optionIndex: 0, emphasized: true},
+  {index: 3},
+  {index: 4},
+];
+
+const getCardContentProps = (data: CardData) => {
+  const service = PriceListItems[data.index];
+  const option =
+    data.optionIndex !== undefined ? service.options[data.optionIndex] : null;
+  return {
+    title: option ? option.name : service.name,
+    details: option ? option.additional : service.additional,
+    price: option ? option.price : '',
+    description: option ? option.description : service.description,
+  };
+};
 
 export default function FirstTimeSection() {
   const {setShowContactForm} = useContactForm();
@@ -15,138 +41,25 @@ export default function FirstTimeSection() {
       <h1 className="title-big">First Time Climbing?</h1>
       <div className="separator-text my-8"></div>
       <div className={style['cards-container']}>
+        {cardData.map((data, i) => (
+          <Card key={i} className={data.emphasized ? style.emphasized : undefined}>
+            <CardContent {...getCardContentProps(data)} emphasized={data.emphasized} />
+          </Card>
+        ))}
         <Card>
           <div className={style.header}>
             <h1 className="title-small capitalize !leading-normal">
-              {PriceListItems[5].options[1].name}
+              ? Frequently Asked Questions
             </h1>
-            <div className="relative h-80 w-full">
-              <Image
-                className="object-cover grayscale contrast-[110%]"
-                src="https://res.cloudinary.com/dfzrhlnwe/image/upload/f_auto,q_auto/v1/gym/_DSC0167_t5sxyg"
-                alt="Picture of the author"
-                fill
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
-              />
-            </div>
+            <div className="separator-text"></div>
           </div>
           <div className={style.body}>
-            <div className="flex flex-row justify-between">
-              <h3 className="subtitle-verysmall">
-                *{PriceListItems[5].options[1].additional}
-              </h3>{' '}
-              <h3 className="subtitle-verysmall">
-                {PriceListItems[5].options[1].price} VND
-              </h3>
-            </div>
-            <p>{PriceListItems[5].options[1].description}</p>
-            <button
-              className="btn btn-black self-end"
-              onClick={() => setShowContactForm(true)}
-            >
-              CONTACT US
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className={style.header}>
-            <h1 className="title-small capitalize !leading-normal">
-              {PriceListItems[5].options[0].name}
-            </h1>
-            <div className="relative h-80 w-full">
-              <Image
-                className="object-cover grayscale contrast-[110%]"
-                src="https://res.cloudinary.com/dfzrhlnwe/image/upload/f_auto,q_auto/v1/gym/_DSC0063_thoucq"
-                alt="Picture of the author"
-                fill
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
-              />
-            </div>
-          </div>
-          <div className={style.body}>
-            <div className="flex flex-row justify-between">
-              <h3 className="subtitle-verysmall">
-                *{PriceListItems[5].options[0].additional}
-              </h3>{' '}
-              <h3 className="subtitle-verysmall">
-                {PriceListItems[5].options[0].price} VND
-              </h3>
-            </div>
-            <p>{PriceListItems[5].options[0].description}</p>
-            <button
-              className="btn btn-black self-end"
-              onClick={() => setShowContactForm(true)}
-            >
-              CONTACT US
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className={style.header}>
-            <h1 className="title-small capitalize !leading-normal">
-              {PriceListItems[3].name}
-            </h1>
-            <div className="relative h-80 w-full">
-              <Image
-                className="object-cover grayscale contrast-[110%]"
-                src="https://res.cloudinary.com/dfzrhlnwe/image/upload/f_auto,q_auto/v1/gym/_DSC0204_bbkx6e"
-                alt="Picture of the author"
-                fill
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
-              />
-            </div>
-          </div>
-          <div className={style.body}>
-            <div className="flex flex-row justify-between">
-              <h3 className="subtitle-verysmall">*{PriceListItems[3].additional}</h3>{' '}
-              <h3 className="subtitle-verysmall">
-                {PriceListItems[3].options[0].price} VND
-              </h3>
-            </div>
-            <p>{PriceListItems[3].description}</p>
-            <button
-              className="btn btn-black self-end"
-              onClick={() => setShowContactForm(true)}
-            >
-              CONTACT US
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className={style.header}>
-            <h1 className="title-small capitalize !leading-normal">
-              {PriceListItems[4].name}
-            </h1>
-            <div className="relative h-80 w-full">
-              <Image
-                className="object-cover grayscale contrast-[110%]"
-                src="https://res.cloudinary.com/dfzrhlnwe/image/upload/f_auto,q_auto/v1/gym/onugbpdjcqy0a8izbmfv"
-                alt="Picture of the author"
-                fill
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'top',
-                }}
-              />
-            </div>
-          </div>
-          <div className={style.body}>
-            <div className="flex flex-row justify-between">
-              <h3 className="subtitle-verysmall">*{PriceListItems[4].additional}</h3>{' '}
-              <h3 className="subtitle-verysmall">
-                {PriceListItems[4].options[0].price} VND
-              </h3>
-            </div>
-            <p>{PriceListItems[4].description}</p>
+            {faqItems.map((item: FAQItem, index: number) => (
+              <li key={index}>
+                <h3 className="title-verysmall">{item.question}</h3>
+                <p className="pl-4 italic">{item.answer}</p>
+              </li>
+            ))}
             <button
               className="btn btn-black self-end"
               onClick={() => setShowContactForm(true)}
